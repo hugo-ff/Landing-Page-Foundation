@@ -1,0 +1,306 @@
+/* ********** Custom Properties ********** */
+
+:root {
+    --main-font: 'Raleway';
+    --alternate-font: sans-serif;
+    --font-size: 16px;
+    --line-height: 1.6;
+    --main-color: rgb(217, 0, 98);
+    --main-modal-color: rgb(217, 0, 98, .75);
+    --second-color: rgb(20, 25, 45);
+    --second-modal-color: rgba(20, 25, 45, .75);
+    --alternate-color: rgb(80, 20, 100);
+    --alternate-modal-color: rgb(80, 20, 100, .75);
+    --action-color: rgb(84, 194, 141);
+    --action-modal-color: rgba(84, 194, 84, .75);
+    --bg-color: rgb(242, 244, 247);
+    --bg-modal-color: rgba(242, 244, 247, .75);
+    --bg-alternate-color: rgb(255, 255, 255);
+    --bg-alternate-modal-color: rgba(255, 255, 255, .75);
+    --border-color: #DDD;
+    --text-color: #515B6D;
+    --title-color: #333;
+    --link-color: #509EE3;
+    --link-hover-color: var(--main-color);
+    --max-width: 1200px;
+    --header-height: 4rem;
+    --logo-width: 4rem;
+    --logo-height: 4rem;
+    --logo-spacing: .5rem;
+    --nav-height: 64px;
+}
+
+
+/* ********** Reset Styles ********** */
+
+html {
+    font-family: var(--main-font), var(--alternate-font);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+body {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: inherit;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-color);
+    transition: all .3s ease-out;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    font-family: inherit;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
+input[type="submit"] {
+    background-color: var(--main-color) !important;
+    font-weight: bold;
+}
+
+label {
+    color: var(--main-color);
+}
+
+textarea {
+    resize: none;
+}
+
+::selection {
+    background-color: var(--main-color);
+    color: var(--second-color);
+}
+
+
+/* ********** Foundation Custom Styles ********** */
+
+.title-bar,
+.top-bar,
+.top-bar ul {
+    padding: 0;
+    margin: 0;
+    background-color: var(--second-color);
+}
+
+.title-bar-title img {
+    margin-left: var(--logo-spacing);
+    padding: var(--logo-spacing);
+    width: auto;
+    height: var(--logo-height);
+}
+
+.menu-icon {
+    right: 1rem;
+}
+
+.menu-icon::after {
+    transition: all .3s ease;
+}
+
+.menu-icon:hover::after {
+    background-color: var(--main-color);
+    box-shadow: 0 7px 0 var(--main-color), 0 14px 0 var(--main-color);
+}
+
+.menu a {
+    padding: 1rem;
+    color: var(--main-color);
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.menu a:hover,
+.menu a.is-active {
+    background-color: var(--main-modal-color);
+    color: var(--bg-color);
+}
+
+.top-bar-right {
+    width: 100%;
+}
+
+.button.success {
+    background-color: var(--action-color);
+    color: #FFF;
+}
+
+.button.success:hover,
+.button.success:focus {
+    background-color: var(--action-color);
+    color: #fff;
+    opacity: .85;
+    transition: all .3s ease;
+}
+
+
+/* ********** My Styles ********** */
+
+.Header>.sticky {
+    background-color: var(--second-color);
+}
+
+.HeroImage {
+    color: #fff;
+    background-size: auto;
+    background-color: rgb(108, 130, 145);
+    background-image: linear-gradient(135deg, rgba(47, 145, 224, .91), rgba(7, 31, 51, .97) 79%);
+    background-image: linear-gradient(135deg, rgba(28, 118, 173, .92), rgba(83, 184, 152, 1));
+}
+
+.HeroImage .u-fullScreen {
+    min-height: calc(100vh - var(--header-height));
+}
+
+.Services {
+    padding: 3rem;
+}
+
+.Services img {
+    padding: 1rem;
+    width: auto;
+    max-height: 200px;
+    object-fit: contain;
+    background-color: var(--action-color);
+}
+
+.ResponsiveSites figure img {
+    padding: .5rem;
+    /* background-color: var(--action-color); */
+}
+
+.Customers figcaption {
+    height: 350px;
+}
+
+.Customers blockquote {
+    border-left: 5px solid var(--main-color);
+    color: var(--second-color);
+}
+
+.WorkFlow-steps sup {
+    font-size: 1rem;
+    color: var(--main-color);
+}
+
+.SinglePage,
+.MultiPage {
+    background-image: url('../img/site-singlepage.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.MultiPage {
+    background-image: url('../img/site-multipage.jpg');
+}
+
+.SinglePage>.u-fullScreen,
+.MultiPage>.u-fullScreen {
+    background-color: var(--bg-modal-color);
+    height: inherit;
+}
+
+.AboutInfo {
+    position: absolute;
+    width: 80%;
+    bottom: 10%;
+    left: 10%;
+    background-color: var(--second-modal-color);
+    padding: 1rem;
+    font-size: 150%;
+    color: #FFF;
+    text-align: center;
+    z-index: 1;
+}
+
+.Footer {
+    padding: 1.5rem;
+    color: #FFF;
+    background-color: var(--second-color);
+}
+
+.u-flowText {
+    font-size: 1.25rem;
+}
+
+.u-fullScreen {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.u-bgWhite {
+    background-color: #fff;
+}
+
+.u-py-3 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+
+/* ********** Media Queries ********** */
+
+
+/* Small only */
+
+@media screen and (max-width: 39.9375em) {}
+
+
+/* Medium - 640  */
+
+@media screen and (min-width: 40em) {
+    .Customers__small-img {
+        width: auto;
+        max-height: 270px;
+        object-fit: contain;
+    }
+}
+
+
+/* Large - 1024 */
+
+@media screen and (min-width: 64em) {
+    .top-bar-right {
+        width: initial;
+    }
+    .menu a:hover,
+    .menu a.is-active {
+        background-color: transparent;
+    }
+    .u-flowText {
+        font-size: 1.75rem;
+    }
+    .Customers__small-img {
+        width: auto;
+        max-height: 200px;
+        object-fit: contain;
+    }
+}
